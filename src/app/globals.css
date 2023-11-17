@@ -1,134 +1,27 @@
 .main-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
 	background-color: black;
-	height: 97vh;
+	color: white;
 }
-.inner-main-container {
+.nav-ul-element {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-.inner-left-section {
-	display: flex;
-	flex-direction: column;
+	color: white;
 	align-items: center;
 	justify-content: center;
-}
-.container-input {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.right-section {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-.inputs-fields {
-	/* background-color: red; */
-	padding: 0px;
-	width: 100%;
-	display: flex;
-	/* flex-direction: column; */
-	/* flex-wrap: wrap; */
-	align-items: center;
-	justify-content: center;
-}
-.input-fields {
-	padding: 10px;
-	border: 3px solid blueviolet;
-	border-radius: 10px;
-	outline: none;
-	margin: 1rem;
-}
-.heading {
-	text-align: center;
-}
-.click-button {
-	padding: 0.4rem 2rem;
-	background-color: blueviolet;
-	color: white;
-	font-size: 20px;
-	border-radius: 20px;
-	outline: none;
-	cursor: pointer;
-	margin-top: 2rem;
-}
-
-.right-section {
-	width: 80%;
-}
-.left-section {
-	width: 100%;
-	color: blueviolet;
-}
-.heading {
-	color: blueviolet;
-	font-size: 2rem;
-}
-.li-elements {
-	color: white;
-	padding: 0.7rem 2rem;
-	background-color: blueviolet;
-	font-size: 12px;
-	margin: 1rem;
 	list-style-type: none;
-	width: 100%;
 }
-.list-main-container {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
+.nav-ul-element > li {
+	margin: 15px;
+
+	color: white !important;
+	font-size: 20px;
+	font-weight: bold;
 }
-.list-container {
-	display: flex;
-	flex-wrap: wrap;
-	width: 80%;
-	align-items: center;
-	justify-content: center;
-	padding: 0px;
-}
-.li-container {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	flex-wrap: wrap;
-	min-width: 100%;
-}
-.li-container-inner {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-}
-.li-elements {
-	width: 15rem;
-	max-width: 15rem;
-	min-width: 15rem;
-	padding: 1rem;
-	border: 1px solid white;
-	border-radius: 10px;
-	text-align: center;
-	font-size: medium;
-	font-weight: 800;
-}
-.hello {
-	position: relative;
-}
-.error-message {
-	color: red;
-	font-size: 13px;
-	text-align: start;
-	position: absolute;
-	top: 50px;
-	left: 16px;
-}
-.input-fields.focused {
-	border: 4px solid blueviolet;
-	scale: 1.1;
-	transition: ease-out;
-	transition-duration: 0.3s;
+.li-item {
+	color: white !important;
+	text-decoration: none;
 }

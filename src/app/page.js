@@ -1,40 +1,37 @@
 'use client'
 
-import { useState } from 'react'
+'use client'
 
+import { useState } from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import styles from './page.module.css'
-import Sibling1 from './sibling1/page'
-import Sibling2 from './sibling2/page'
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
+  const router = useRouter()
 
-  const [sharedData, setSharedData] = useState([])
-  const [selectedName, setSelectedName] = useState({
-    firstName: '',
-    lastName: '',
-    rollNo: ''
-  })
-
-  const parentFunction = (data) => {
-    setSharedData((prev) => ([...prev, data]))
+  const handleNaviation = (routeName) => {
+    router.push(routeName)
   }
 
   return (
     <main className='main-container'>
-      <div className='inner-main-container'>
-        <div className='right-section'>
-          <Sibling2 parentFunction={parentFunction} />
-        </div>
+      <h1>Basic Routing</h1>
+      <Link href='/login'>
+        Go To Login Page
+      </Link>
+      <br />
+      <Link href='/about'>
+        Go To About Us Page
+      </Link>
 
-        <div className='left-section'>
-          <div className='inner-left-section'>
-            <Sibling1 sharedData={sharedData} />
-          </div>
-
-        </div>
-
-      </div>
+      <button onClick={() => handleNaviation('/login')}>
+        Go to Login Page
+      </button>
+      <button onClick={() => handleNaviation('/about')}>
+        Go to About Page
+      </button>
 
     </main>
   )
