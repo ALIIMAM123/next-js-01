@@ -2,18 +2,28 @@
 
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './page.module.css'
 import { useRouter } from 'next/navigation'
 
 export default function Home() {
+  const [productList, setProductList] = useState([])
   const router = useRouter()
 
   const handleNaviation = (routeName) => {
     router.push(routeName)
   }
+
+  const fetchDataFromApi = async () => {
+    let data = await fetch('https://fakestoreapi.com/products');
+    data = await data.json();
+    setProductList(data)
+
+  }
+
+  console.log(productList)
 
   return (
     <main className='main-container'>
@@ -32,6 +42,18 @@ export default function Home() {
       <button onClick={() => handleNaviation('/about')}>
         Go to About Page
       </button>
+
+      <br />
+
+      <button onClick={fetchDataFromApi}>
+        Fetch Data from API
+      </button>
+
+      <p>
+        {productList && productList.map((eachItem) => (
+          <h1>{eachItem.title}</h1>
+        ))}
+      </p>
 
     </main>
   )
