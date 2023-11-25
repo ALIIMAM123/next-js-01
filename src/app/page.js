@@ -1,4 +1,4 @@
-'use client'
+
 
 'use client'
 
@@ -54,6 +54,8 @@ export default function Home() {
           <h1>{eachItem.title}</h1>
         ))}
       </p>
+
+      <Link href='/productslist'>Fetch Data in Server Component</Link>
 
     </main>
   )
